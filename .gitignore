@@ -4,3 +4,7 @@
 .gradle/buildOutputCleanup/
 
 build/tmp/
+
+.idea/
+
+build/
