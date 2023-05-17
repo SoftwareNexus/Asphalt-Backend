@@ -3,7 +3,6 @@ package com.pt.one.entity;
 import com.pt.one.dto.MemberDTO;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.lang.reflect.Member;
@@ -12,22 +11,21 @@ import java.lang.reflect.Member;
 @Getter
 @Setter
 @Table(name = "member")
-@Accessors(chain = true)
 public class MemberEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer member_seq;
-    @Column(name = "member_id")
+    @Column
     private String member_id;
-    @Column(name = "member_pw")
+    @Column
     private String member_pw;
-    @Column(name = "member_name")
+    @Column
     private String member_name;
-    @Column(name = "member_nick")
+    @Column
     private String member_nick;
-    @Column(name = "member_age")
+    @Column
     private Integer member_age;
-    @Column(name = "member_gender")
+    @Column
     private String member_gender;
 
     public static MemberEntity toMemberEntity(MemberDTO memberDTO){
