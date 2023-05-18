@@ -28,12 +28,17 @@ public class MemberService {
             if (memberEntity.get().getMember_pw().equals(loginDTO.getMember_pw())) {
                 // 로그인 성공
                 loginResDTO.setLogin_success("성공");
-                loginResDTO.setData(MemberDTO.toMemberDTO(memberEntity.get()));
+                loginResDTO.setMember_seq(memberEntity.get().getMember_seq());
+                loginResDTO.setMember_id(memberEntity.get().getMember_id());
+                loginResDTO.setMember_pw(memberEntity.get().getMember_pw());
+                loginResDTO.setMember_name(memberEntity.get().getMember_name());
+                loginResDTO.setMember_nick(memberEntity.get().getMember_nick());
+                loginResDTO.setMember_age(memberEntity.get().getMember_age());
+                loginResDTO.setMember_gender(memberEntity.get().getMember_gender());
                 return loginResDTO;
             }
         }
         loginResDTO.setLogin_success("실패");
-        loginResDTO.setData(new MemberDTO());
         return loginResDTO;
     }
 }

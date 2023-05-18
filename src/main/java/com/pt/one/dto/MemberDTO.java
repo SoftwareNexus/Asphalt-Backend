@@ -12,7 +12,6 @@ import lombok.ToString;
 @ToString
 public class MemberDTO {
 
-
     private Integer member_seq;
     private String member_id;
     private String member_pw;

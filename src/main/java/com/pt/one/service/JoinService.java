@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.aspectj.weaver.Member;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class JoinService {
@@ -15,5 +17,13 @@ public class JoinService {
     public void join(MemberDTO memberDTO){
         MemberEntity memberEntity = MemberEntity.toMemberEntity(memberDTO);
         memberRepository.save(memberEntity);
+    }
+
+    public String validation(String member_id) {
+        Optional<MemberEntity> member_check = memberRepository.findByMember_id(member_id);
+        if (member_check.isPresent()){
+            return "unable";
+        }
+        return "able";
     }
 }
