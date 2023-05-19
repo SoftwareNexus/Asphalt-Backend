@@ -6,3 +6,15 @@
 build/tmp/
 
 .idea/
+
+.gradle/
+
+build/classes/
+
+build/reports/
+
+build/resources/
+
+build/test-results/
+
+out/
