@@ -7,4 +7,14 @@ build/tmp/
 
 .idea/
 
-build/
+.gradle/
+
+build/classes/
+
+build/reports/
+
+build/resources/
+
+build/test-results/
+
+out/
